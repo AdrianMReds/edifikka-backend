@@ -1,0 +1,50 @@
+#Types
+type User implements Timestamps {
+  id: ID!
+  type: UserTypes
+  name: String!
+  lastname: String!
+  email: String!
+  birthday: Date
+  status: UserStatus
+  #   establishment: Establishment
+
+  # Interface required
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+# Inputs
+
+input UserCreateInput {
+  name: String!
+  lastname: String!
+  email: String!
+  password: String!
+  birthday: Date
+  type: UserTypes!
+  status: UserStatus!
+  #   establishment: ID
+}
+
+input UserUpdateInput {
+  name: String
+  lastname: String
+  email: String
+  birthday: Date
+  status: UserStatus
+  # establishment: ID
+}
+
+# Enums
+
+enum UserTypes {
+  superadmin
+  admin
+  resident
+}
+
+enum UserStatus {
+  debt
+  normal
+}

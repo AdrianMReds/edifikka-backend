@@ -1,0 +1,30 @@
+{
+  "name": "edifikka-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AdrianMReds/edifikka-backend.git",
+  "author": "AdrianMReds <adrianmontemayor.r@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon -e js,json,graphql src --exec babel-node",
+    "db:seed": "babel-node ./src/db/scripts/seed.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/node": "^7.25.0",
+    "@babel/preset-env": "^7.25.3",
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "@graphql-tools/schema": "^10.0.4",
+    "apollo-server-express": "^3.13.0",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "graphql": "^16.9.0",
+    "mongoose": "^8.5.2",
+    "mongoose-delete": "^1.0.2"
+  }
+}
