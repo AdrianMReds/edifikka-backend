@@ -1,32 +1,41 @@
 import mongoose from "mongoose";
 
-const EstablishmentSchema = mongoose.Schema({
-  name: { type: String, required: [true, "Agrega un nombre"] },
-  lastname: { type: String, required: [true, "Agrega apellidos"] },
-  email: {
-    type: String,
-    required: [true, "Agrega un email"],
-    unique: true,
+const EstablishmentSchema = mongoose.Schema(
+  {
+    name: { type: String, required: [true, "Agrega un nombre"] },
+    location: { type: String, required: true },
+    type: {
+      type: String,
+      enum: ["neighborhood", "condominum"],
+      required: true,
+    },
+    admins: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+    bankAccounts: {
+      type: [mongoose.Schema.Types.ObjectId],
+      ref: "BankAccount",
+    },
+    indiviso: [
+      {
+        property: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Property",
+          required: true,
+        },
+        value: {
+          type: Number,
+          required: true,
+        },
+      },
+    ],
   },
-  password: { type: String, required: [true, "Agrega un password"] },
-  birthday: { type: Date },
-  type: {
-    type: String,
-    enum: ["superadmin", "admin", "resident"],
-    required: true,
-  },
-  status: {
-    type: String,
-    enum: ["debt", "normal"],
-    default: "normal",
-  },
-  establishment: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Establishment",
-    required: false,
-  },
-});
+  { timestamps: true }
+);
 
-const User = mongoose.model("User", EstablishmentSchema);
+const Establishment = mongoose.model("Establishment", EstablishmentSchema);
 
-export default User;
+export default Establishment;
