@@ -18,11 +18,11 @@ const FeeSchema = mongoose.Schema(
     },
     type: {
       type: String,
-      enum: ["penalty", "regular-fee", "fine", "personalizada", "indiviso"],
+      enum: ["penalty", "regular", "fine", "custom", "indiviso"],
       required: true,
     },
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
+    users: {
+      type: [mongoose.Schema.Types.ObjectId],
       ref: "User",
       required: true,
     },

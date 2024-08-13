@@ -1,0 +1,26 @@
+#Types
+type BankAccount implements Timestamps {
+  id: ID!
+  balance: Float
+  movements: [ID]
+  # Interface required
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+type BankAccounts {
+  info: Info!
+  results: [BankAccount]!
+}
+
+# Inputs
+
+input BankAccountCreateInput {
+  balance: Float
+  movements: [ID]
+}
+
+input UserUpdateInput {
+  balance: Float
+  movements: [ID]
+}

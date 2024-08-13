@@ -1,0 +1,37 @@
+#Types
+type Report implements Timestamps {
+  type: ReportTypes!
+  establishment: ID!
+  title: String!
+  description: String!
+
+  # Interface required
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+type Reports {
+  info: Info!
+  results: [Report]!
+}
+
+#Inputs
+input ReportCreateInput {
+  type: ReportTypes!
+  establishment: ID!
+  title: String!
+  description: String!
+}
+
+input ReportUpdateInput {
+  title: String
+  description: String
+}
+
+# Enums
+
+enum ReportTypes {
+  space
+  damage
+  other
+}

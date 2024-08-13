@@ -1,0 +1,29 @@
+#Types
+type VisitNotice implements Timestamps {
+  establishment: ID!
+  madeBy: ID!
+  visitorName: String!
+  date: Date!
+
+  # Interface required
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+type VisitNotices {
+  info: Info!
+  results: [VisitNotice]!
+}
+
+#Inputs
+input VisitNoticeCreateInput {
+  establishment: ID!
+  madeBy: ID!
+  visitorName: String!
+  date: Date!
+}
+
+input VisitNoticeUpdateInput {
+  visitorName: String
+  date: Date
+}

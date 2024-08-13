@@ -1,0 +1,29 @@
+#Types
+type SpaceBooking implements Timestamps {
+  space: ID!
+  date: Date!
+  timespan: Float!
+  madeBy: ID!
+
+  # Interface required
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+type SpaceBookings {
+  info: Info!
+  results: [SpaceBooking]!
+}
+
+#Inputs
+input SpaceBookingCreateInput {
+  space: ID!
+  date: Date!
+  timespan: Float!
+  madeBy: ID!
+}
+
+input SpaceBookingUpdateInput {
+  date: Date
+  timespan: Float
+}

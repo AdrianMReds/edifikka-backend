@@ -1,0 +1,35 @@
+#Types
+type Movement implements Timestamps {
+  type: MovementTypes!
+  amount: Float!
+  establishment: ID!
+  fee: ID
+  registeredBy: ID!
+  madeBy: ID
+
+  # Interface required
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+type Movements {
+  info: Info!
+  results: [Movement]!
+}
+
+#Inputs
+input MovementCreateInput {
+  type: MovementTypes!
+  amount: Float!
+  establishment: ID!
+  fee: ID
+  registeredBy: ID!
+  madeBy: ID
+}
+
+input MovementUpdateInput {
+  type: MovementTypes
+  amount: Float
+  fee: ID
+  madeBy: ID
+}

@@ -7,6 +7,10 @@ const SpaceBookingSchema = mongoose.Schema(
       ref: "Space",
       required: true,
     },
+    date: {
+      type: Date,
+      required: true,
+    },
     timespan: {
       type: Number,
       required: true,

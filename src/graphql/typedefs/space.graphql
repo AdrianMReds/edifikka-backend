@@ -1,0 +1,27 @@
+#Types
+type Space implements Timestamps {
+  establishment: ID!
+  name: String!
+  hourTimespan: Float!
+
+  # Interface required
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+type Spaces {
+  info: Info!
+  results: [Space]!
+}
+
+#Inputs
+input SpaceCreateInput {
+  establishment: ID!
+  name: String!
+  hourTimespan: Float!
+}
+
+input SpaceUpdateInput {
+  name: String
+  hourTimespan: Float
+}

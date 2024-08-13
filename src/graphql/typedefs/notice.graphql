@@ -1,0 +1,27 @@
+#Types
+type Notice implements Timestamps {
+  title: String!
+  text: String!
+  postedBy: ID!
+
+  # Interface required
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+type Notices {
+  info: Info!
+  results: [Notice]!
+}
+
+#Inputs
+input NoticeCreateInput {
+  title: String!
+  text: String!
+  postedBy: ID!
+}
+
+input NoticeUpdateInput {
+  title: String
+  text: String
+}

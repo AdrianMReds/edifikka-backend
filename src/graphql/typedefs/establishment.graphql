@@ -1,0 +1,54 @@
+#Types
+type Establishment implements Timestamps {
+  name: String!
+  location: String!
+  type: EstablishmentTypes!
+  admins: [ID]
+  bankAccounts: [ID]
+  indiviso: [indiviso]
+
+  # Interface required
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+type Establishments {
+  info: Info!
+  results: [Establishment]!
+}
+
+type Indiviso {
+  property: ID!
+  value: Float
+}
+
+#Inputs
+input EstablishmentCreateInput {
+  name: String!
+  location: String!
+  type: EstablishmentTypes!
+  admins: [ID]
+  bankAccounts: [ID]
+  indiviso: [IndivisoInput]
+}
+
+input EstablishmentUpdateInput {
+  name: String
+  location: String
+  type: EstablishmentTypes
+  admins: [ID]
+  bankAccounts: [ID]
+  indiviso: [IndivisoInput]
+}
+
+input IndivisoInput {
+  property: ID!
+  value: Float
+}
+
+# Enums
+
+enum EstablishmentTypes {
+  neighborhood
+  condominum
+}

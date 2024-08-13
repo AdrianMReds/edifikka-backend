@@ -1,0 +1,54 @@
+#Types
+type Fee implements Timestamps {
+  establishment: ID!
+  amount: Float!
+  frequency: FeeFrequency!
+  type: FeeTypes!
+  users: [ID]!
+  createdBy: ID
+  updatedBy: ID
+
+  # Interface required
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+type Fees {
+  info: Info!
+  results: [Fee]!
+}
+
+#Inputs
+input FeeCreateInput {
+  establishment: ID!
+  amount: Float!
+  frequency: FeeFrequency!
+  type: FeeTypes!
+  users: [ID]!
+  createdBy: ID
+  updatedBy: ID
+}
+
+input FeeUpdateInput {
+  amount: Float
+  frequency: FeeFrequency
+  type: FeeTypes
+  users: [ID]
+  updatedBy: ID
+}
+
+# Enums
+
+enum FeeFrequency{
+    monthly
+    one-time
+    yearly
+}
+
+enum FeeTypes {
+  penalty
+  regular
+  fine
+  custom
+  indiviso
+}

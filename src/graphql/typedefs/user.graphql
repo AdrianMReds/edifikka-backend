@@ -7,11 +7,17 @@ type User implements Timestamps {
   email: String!
   birthday: Date
   status: UserStatus
-  #   establishment: Establishment
+  establishments: [ID]
+  permits: [String]
 
   # Interface required
   createdAt: Date!
   updatedAt: Date!
+}
+
+type Users{
+  info: Info!
+  results: [User]!
 }
 
 # Inputs
@@ -24,7 +30,8 @@ input UserCreateInput {
   birthday: Date
   type: UserTypes!
   status: UserStatus!
-  #   establishment: ID
+  establishments: [ID]
+  permits: [String]
 }
 
 input UserUpdateInput {
@@ -33,7 +40,8 @@ input UserUpdateInput {
   email: String
   birthday: Date
   status: UserStatus
-  # establishment: ID
+  establishments: [ID]
+  permits: [String]
 }
 
 # Enums
@@ -42,6 +50,8 @@ enum UserTypes {
   superadmin
   admin
   resident
+  owner
+  special
 }
 
 enum UserStatus {

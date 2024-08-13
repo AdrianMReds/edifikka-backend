@@ -19,6 +19,7 @@ const MovementSchema = mongoose.Schema(
     fee: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Fee",
+      default: null,
     },
     registeredBy: {
       type: mongoose.Schema.Types.ObjectId,
