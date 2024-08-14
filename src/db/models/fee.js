@@ -13,7 +13,7 @@ const FeeSchema = mongoose.Schema(
     },
     frequency: {
       type: String,
-      enum: ["monthly", "one-time", "yearly"],
+      enum: ["monthly", "oneTime", "yearly"],
       required: true,
     },
     type: {

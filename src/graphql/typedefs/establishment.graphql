@@ -5,7 +5,7 @@ type Establishment implements Timestamps {
   type: EstablishmentTypes!
   admins: [ID]
   bankAccounts: [ID]
-  indiviso: [indiviso]
+  indiviso: [Indiviso]
 
   # Interface required
   createdAt: Date!

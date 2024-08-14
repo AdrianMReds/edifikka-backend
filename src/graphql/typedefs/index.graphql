@@ -5,10 +5,96 @@ type Query {
   #Users
   users: [User]!
   user(id: ID!): User
+
+  #BankAccounts
+  bankAccounts: BankAccounts!
+  bankAccount(id: ID!): BankAccount
+
+  #Establishments
+  establishments: Establishments!
+  establishment(id: ID!): Establishment
+
+  #Fees
+  fees: Fees!
+  fee(id: ID!): Fee
+
+  #Movements
+  movements: Movements!
+  movement(id: ID!): Movement
+
+  #Notices
+  notices: Notices!
+  notice(id: ID!): Notice
+
+  #Propertys
+  properties: Properties!
+  property(id: ID!): Property
+
+  #Reports
+  reports: Reports!
+  report(id: ID!): Report
+
+  #Spaces
+  spaces: Spaces!
+  space(id: ID!): Space
+
+  #SpaceBookings
+  spaceBookings: SpaceBookings!
+  spaceBooking(id: ID!): SpaceBooking
+
+  #VisitNotices
+  visitNotices: VisitNotices!
+  visitNotice(id: ID!): VisitNotice
 }
 
 type Mutation {
   #Users
   createUser(user: UserCreateInput!): User!
   updateUser(id: ID!, user: UserUpdateInput!): User!
+
+  #BankAccounts
+  createBankAccount(bankAccount: BankAccountCreateInput!): BankAccount!
+  updateBankAccount(id: ID!, bankAccount: BankAccountUpdateInput!): BankAccount!
+
+  #Establishments
+  createEstablishment(establishment: EstablishmentCreateInput!): Establishment!
+  updateEstablishment(
+    id: ID!
+    establishment: EstablishmentUpdateInput!
+  ): Establishment!
+
+  #Fees
+  createFee(fee: FeeCreateInput!): Fee!
+  updateFee(id: ID!, fee: FeeUpdateInput!): Fee!
+
+  #Movements
+  createMovement(movement: MovementCreateInput!): Movement!
+  updateMovement(id: ID!, movement: MovementUpdateInput!): Movement!
+
+  #Notices
+  createNotice(notice: NoticeCreateInput!): Notice!
+  updateNotice(id: ID!, notice: NoticeUpdateInput!): Notice!
+
+  #Propertys
+  createProperty(property: PropertyCreateInput!): Property!
+  updateProperty(id: ID!, property: PropertyUpdateInput!): Property!
+
+  #Reports
+  createReport(report: ReportCreateInput!): Report!
+  updateReport(id: ID!, report: ReportUpdateInput!): Report!
+
+  #Spaces
+  createSpace(space: SpaceCreateInput!): Space!
+  updateSpace(id: ID!, space: SpaceUpdateInput!): Space!
+
+  #SpaceBookings
+  createSpaceBooking(spaceBooking: SpaceBookingCreateInput!): SpaceBooking!
+  updateSpaceBooking(
+    id: ID!
+    spaceBooking: SpaceBookingUpdateInput!
+  ): SpaceBooking!
+
+  #VisitNotices
+  createVisitNotice(visitNotice: VisitNoticeCreateInput!): VisitNotice!
+  updateVisitNotice(id: ID!, visitNotice: VisitNoticeUpdateInput!): VisitNotice!
 }

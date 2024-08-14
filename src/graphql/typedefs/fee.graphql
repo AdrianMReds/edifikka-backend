@@ -39,10 +39,10 @@ input FeeUpdateInput {
 
 # Enums
 
-enum FeeFrequency{
-    monthly
-    one-time
-    yearly
+enum FeeFrequency {
+  monthly
+  oneTime
+  yearly
 }
 
 enum FeeTypes {

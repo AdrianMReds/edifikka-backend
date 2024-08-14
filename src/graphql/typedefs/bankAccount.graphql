@@ -20,7 +20,7 @@ input BankAccountCreateInput {
   movements: [ID]
 }
 
-input UserUpdateInput {
+input BankAccountUpdateInput {
   balance: Float
   movements: [ID]
 }

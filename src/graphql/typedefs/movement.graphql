@@ -33,3 +33,10 @@ input MovementUpdateInput {
   fee: ID
   madeBy: ID
 }
+
+#Enums
+
+enum MovementTypes {
+  entry
+  expense
+}
