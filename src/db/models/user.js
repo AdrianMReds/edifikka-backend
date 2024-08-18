@@ -39,7 +39,7 @@ const UserSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-User.plugin(mongooseDelete);
+UserSchema.plugin(mongooseDelete);
 
 const User = mongoose.model("User", UserSchema);
 

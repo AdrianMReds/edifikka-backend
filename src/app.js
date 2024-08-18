@@ -2,13 +2,13 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import http from "http";
-// import auth from "./routes/auth.js";
+import auth from "./routes/auth.js";
 import graphqlServer from "./graphql/index.js";
 
 const app = express();
 
 app.use(express.json(), cors(), cookieParser());
-// app.use("/auth", auth);
+app.use("/auth", auth);
 
 async function startServer(httpServer) {
   await graphqlServer.start();
