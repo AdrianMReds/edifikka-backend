@@ -3,7 +3,7 @@ scalar Date
 
 type Query {
   #Users
-  users: [User]!
+  users: Users!
   user(id: ID!): User
 
   #BankAccounts
