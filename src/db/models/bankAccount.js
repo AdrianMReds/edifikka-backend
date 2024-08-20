@@ -2,6 +2,15 @@ import mongoose from "mongoose";
 
 const BankAccountSchema = mongoose.Schema(
   {
+    name: {
+      type: String,
+      required: true,
+    },
+    bank: {
+      type: String,
+      // enum de bancos
+      required: true,
+    },
     balance: {
       type: Number,
       default: 0.0,

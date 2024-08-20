@@ -1,6 +1,10 @@
 #Types
 type BankAccount implements Timestamps {
   id: ID!
+  name: String!
+  bank: String!
+  # En el futuro hacer un modelo banco para esto
+  # bank: Bank!
   balance: Float
   movements: [Movement]
   # Interface required
@@ -16,11 +20,14 @@ type BankAccounts {
 # Inputs
 
 input BankAccountCreateInput {
+  name: String!
+  bank: String!
   balance: Float
   movements: [ID]
 }
 
 input BankAccountUpdateInput {
+  name: String
   balance: Float
   movements: [ID]
 }
