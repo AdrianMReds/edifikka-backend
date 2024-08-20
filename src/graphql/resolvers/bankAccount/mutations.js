@@ -7,7 +7,7 @@ const bankAccountMutations = {
 
       const savedBankAccount = await newBankAccount.save();
 
-      return loaders.bankAccount.one(savedBankAccount._id);
+      return loaders.bankaccount.one(savedBankAccount._id);
     } catch (e) {
       return {
         status: 500,
@@ -15,13 +15,13 @@ const bankAccountMutations = {
       };
     }
   },
-  updateBankAccount: async (_, { id, access }, { loaders }) => {
-    const updatedAccess = await Access.findByIdAndUpdate(
+  updateBankAccount: async (_, { id, bankAccount }, { loaders }) => {
+    const updatedBankAccount = await BankAccount.findByIdAndUpdate(
       id,
-      { $set: access },
+      { $set: bankAccount },
       { new: true, runValidators: true }
     );
-    return loaders.access.one(updatedAccess._id);
+    return loaders.bankaccount.one(updatedBankAccount._id);
   },
 };
 

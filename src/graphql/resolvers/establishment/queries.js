@@ -1,25 +1,23 @@
-import { User } from "@models";
+import { Establishment } from "@models";
 
-const userQueries = {
-  users: async (
+const establishmentQueries = {
+  establishments: async (
     _,
     { params = { page: 1, pageSize: 20 } },
     { authScope, loaders }
   ) => {
     const { pageSize, page } = params;
 
-    console.log(loaders);
-
     return {
       results: async () => {
-        const users = await User.find()
+        const establishments = await Establishment.find()
           .skip(pageSize * (page - 1))
           .limit(pageSize);
 
-        return loaders.user.many(users.map(({ id }) => id));
+        return loaders.establishment.many(establishments.map(({ id }) => id));
       },
       info: async () => {
-        const count = await User.countDocuments();
+        const count = await Establishment.countDocuments();
 
         const pages = Math.ceil(count / pageSize);
         const prev = page > 1 ? page - 1 : null;
@@ -34,7 +32,8 @@ const userQueries = {
       },
     };
   },
-  user: async (_, { id }, { loaders }) => loaders.user.one(id),
+  establishment: async (_, { id }, { loaders }) =>
+    loaders.establishment.one(id),
 };
 
-export default userQueries;
+export default establishmentQueries;
