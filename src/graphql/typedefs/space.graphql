@@ -1,6 +1,7 @@
 #Types
 type Space implements Timestamps {
-  establishment: ID!
+  id: ID!
+  establishment: Establishment!
   name: String!
   hourTimespan: Float!
 

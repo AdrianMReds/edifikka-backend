@@ -1,11 +1,12 @@
 #Types
 type Movement implements Timestamps {
+  id: ID!
   type: MovementTypes!
   amount: Float!
-  establishment: ID!
-  fee: ID
-  registeredBy: ID!
-  madeBy: ID
+  establishment: Establishment!
+  fee: Fee
+  registeredBy: User!
+  madeBy: User
 
   # Interface required
   createdAt: Date!

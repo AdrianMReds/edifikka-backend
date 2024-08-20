@@ -1,9 +1,10 @@
 #Types
 type SpaceBooking implements Timestamps {
-  space: ID!
+  id: ID!
+  space: Space!
   date: Date!
   timespan: Float!
-  madeBy: ID!
+  madeBy: User!
 
   # Interface required
   createdAt: Date!

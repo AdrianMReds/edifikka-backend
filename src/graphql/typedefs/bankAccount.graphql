@@ -2,7 +2,7 @@
 type BankAccount implements Timestamps {
   id: ID!
   balance: Float
-  movements: [ID]
+  movements: [Movement]
   # Interface required
   createdAt: Date!
   updatedAt: Date!

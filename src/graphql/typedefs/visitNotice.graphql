@@ -1,7 +1,8 @@
 #Types
 type VisitNotice implements Timestamps {
-  establishment: ID!
-  madeBy: ID!
+  id: ID!
+  establishment: Establishment!
+  madeBy: User!
   visitorName: String!
   date: Date!
 

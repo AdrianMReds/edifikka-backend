@@ -7,7 +7,7 @@ type User implements Timestamps {
   email: String!
   birthday: Date
   status: UserStatus
-  establishments: [ID]
+  establishments: [Establishment]
   permits: [String]
   # En que propiedad vive o es dueño
   # propertiesOwned: []

@@ -1,7 +1,8 @@
 #Types
 type Report implements Timestamps {
+  id: ID!
   type: ReportTypes!
-  establishment: ID!
+  establishment: Establishment!
   title: String!
   description: String!
 

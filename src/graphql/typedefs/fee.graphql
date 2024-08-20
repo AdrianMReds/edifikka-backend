@@ -1,12 +1,13 @@
 #Types
 type Fee implements Timestamps {
-  establishment: ID!
+  id: ID!
+  establishment: Establishment!
   amount: Float!
   frequency: FeeFrequency!
   type: FeeTypes!
-  users: [ID]!
-  createdBy: ID
-  updatedBy: ID
+  users: [User]!
+  createdBy: User
+  updatedBy: User
 
   # Interface required
   createdAt: Date!

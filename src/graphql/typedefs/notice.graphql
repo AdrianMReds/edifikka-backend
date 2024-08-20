@@ -1,8 +1,9 @@
 #Types
 type Notice implements Timestamps {
+  id: ID!
   title: String!
   text: String!
-  postedBy: ID!
+  postedBy: User!
 
   # Interface required
   createdAt: Date!

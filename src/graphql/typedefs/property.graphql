@@ -1,10 +1,11 @@
 #Types
 type Property implements Timestamps {
+  id: ID!
   street: String
   number: Int!
-  users: [ID]!
-  owner: ID!
-  responsible: ID!
+  users: [User]!
+  owner: User!
+  responsible: User!
 
   # Interface required
   createdAt: Date!

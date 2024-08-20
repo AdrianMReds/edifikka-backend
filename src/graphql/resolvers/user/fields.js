@@ -1,11 +1,10 @@
 const userFields = {
   User: {
     establishments: async ({ establishments }, _, { loaders }) => {
-      if (establishments) {
-        return loaders.establishment.many(establishments.map(({ id }) => id));
-      } else {
+      if (!establishments || !establishments.length) {
         return [];
       }
+      return loaders.establishment.many(establishments);
     },
   },
 };

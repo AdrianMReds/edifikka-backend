@@ -1,10 +1,11 @@
 #Types
 type Establishment implements Timestamps {
+  id: ID!
   name: String!
   location: String!
   type: EstablishmentTypes!
-  admins: [ID]
-  bankAccounts: [ID]
+  admins: [User]
+  bankAccounts: [BankAccount]
   indiviso: [Indiviso]
 
   # Interface required

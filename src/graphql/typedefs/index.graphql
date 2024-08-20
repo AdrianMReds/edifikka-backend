@@ -3,47 +3,47 @@ scalar Date
 
 type Query {
   #Users
-  users: Users!
+  users(params: QueryParams): Users!
   user(id: ID!): User
 
   #BankAccounts
-  bankAccounts: BankAccounts!
+  bankAccounts(params: QueryParams): BankAccounts!
   bankAccount(id: ID!): BankAccount
 
   #Establishments
-  establishments: Establishments!
+  establishments(params: QueryParams): Establishments!
   establishment(id: ID!): Establishment
 
   #Fees
-  fees: Fees!
+  fees(params: QueryParams): Fees!
   fee(id: ID!): Fee
 
   #Movements
-  movements: Movements!
+  movements(params: QueryParams): Movements!
   movement(id: ID!): Movement
 
   #Notices
-  notices: Notices!
+  notices(params: QueryParams): Notices!
   notice(id: ID!): Notice
 
   #Propertys
-  properties: Properties!
+  properties(params: QueryParams): Properties!
   property(id: ID!): Property
 
   #Reports
-  reports: Reports!
+  reports(params: QueryParams): Reports!
   report(id: ID!): Report
 
   #Spaces
-  spaces: Spaces!
+  spaces(params: QueryParams): Spaces!
   space(id: ID!): Space
 
   #SpaceBookings
-  spaceBookings: SpaceBookings!
+  spaceBookings(params: QueryParams): SpaceBookings!
   spaceBooking(id: ID!): SpaceBooking
 
   #VisitNotices
-  visitNotices: VisitNotices!
+  visitNotices(params: QueryParams): VisitNotices!
   visitNotice(id: ID!): VisitNotice
 }
 
