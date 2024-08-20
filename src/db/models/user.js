@@ -14,7 +14,7 @@ const UserSchema = mongoose.Schema(
     password: { type: String, required: [true, "Agrega un password"] },
     birthday: { type: Date },
     type: {
-      type: String,
+      type: [String],
       enum: ["superadmin", "admin", "resident", "owner", "special"],
       required: true,
     },

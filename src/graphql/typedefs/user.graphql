@@ -1,7 +1,7 @@
 #Types
 type User implements Timestamps {
   id: ID!
-  type: UserTypes
+  type: [UserTypes]
   name: String!
   lastname: String!
   email: String!
@@ -9,13 +9,16 @@ type User implements Timestamps {
   status: UserStatus
   establishments: [ID]
   permits: [String]
+  # En que propiedad vive o es dueño
+  # propertiesOwned: []
+  # livingIn: ID
 
   # Interface required
   createdAt: Date!
   updatedAt: Date!
 }
 
-type Users{
+type Users {
   info: Info!
   results: [User]!
 }
@@ -28,7 +31,7 @@ input UserCreateInput {
   email: String!
   password: String!
   birthday: Date
-  type: UserTypes!
+  type: [UserTypes]!
   status: UserStatus!
   establishments: [ID]
   permits: [String]
@@ -39,6 +42,7 @@ input UserUpdateInput {
   lastname: String
   email: String
   birthday: Date
+  type: [UserTypes]
   status: UserStatus
   establishments: [ID]
   permits: [String]

@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon -e js,json,graphql src --exec babel-node",
-    "db:seed": "babel-node ./src/db/scripts/seed.js"
+    "db:seed": "babel-node ./src/db/scripts/seed.js",
+    "db:drop": "babel-node ./src/db/scripts/drop.js"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
