@@ -6,6 +6,7 @@ type Establishment implements Timestamps {
   type: EstablishmentTypes!
   admins: [User]
   bankAccounts: [BankAccount]
+  # Convertirlo a modelo después
   indiviso: [Indiviso]
 
   # Interface required
