@@ -1,7 +1,7 @@
-import { Movement } from "@models";
+import { Space } from "@models";
 
-const movementQueries = {
-  movements: async (
+const spaceQueries = {
+  spaces: async (
     _,
     { params = { page: 1, pageSize: 20 } },
     { authScope, loaders }
@@ -10,14 +10,14 @@ const movementQueries = {
 
     return {
       results: async () => {
-        const movements = await Movement.find()
+        const spaces = await Space.find()
           .skip(pageSize * (page - 1))
           .limit(pageSize);
 
-        return loaders.movement.many(movements.map(({ id }) => id));
+        return loaders.space.many(spaces.map(({ id }) => id));
       },
       info: async () => {
-        const count = await Movement.countDocuments();
+        const count = await Space.countDocuments();
 
         const pages = Math.ceil(count / pageSize);
         const prev = page > 1 ? page - 1 : null;
@@ -32,7 +32,7 @@ const movementQueries = {
       },
     };
   },
-  movement: async (_, { id }, { loaders }) => loaders.movement.one(id),
+  space: async (_, { id }, { loaders }) => loaders.space.one(id),
 };
 
-export default movementQueries;
+export default spaceQueries;
