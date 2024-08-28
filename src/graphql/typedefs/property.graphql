@@ -6,6 +6,8 @@ type Property implements Timestamps {
   users: [User]!
   owner: User!
   responsible: User!
+  indiviso: Float
+  establishment: Establishment!
 
   # Interface required
   createdAt: Date!
@@ -24,6 +26,8 @@ input PropertyCreateInput {
   users: [ID]!
   owner: ID!
   responsible: ID!
+  indiviso: Float
+  establishment: ID!
 }
 
 input PropertyUpdateInput {
@@ -32,4 +36,6 @@ input PropertyUpdateInput {
   users: [ID]
   owner: ID
   responsible: ID
+  indiviso: Float
+  establishment: ID
 }

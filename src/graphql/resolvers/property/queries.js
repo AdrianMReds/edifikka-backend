@@ -1,7 +1,7 @@
-import { User } from "@models";
+import { Property } from "@models";
 
-const userQueries = {
-  users: async (
+const propertyQueries = {
+  properties: async (
     _,
     { params = { page: 1, pageSize: 20 } },
     { authScope, loaders }
@@ -10,14 +10,14 @@ const userQueries = {
 
     return {
       results: async () => {
-        const users = await User.find()
+        const properties = await Property.find()
           .skip(pageSize * (page - 1))
           .limit(pageSize);
 
-        return loaders.user.many(users.map(({ id }) => id));
+        return loaders.property.many(properties.map(({ id }) => id));
       },
       info: async () => {
-        const count = await User.countDocuments();
+        const count = await Property.countDocuments();
 
         const pages = Math.ceil(count / pageSize);
         const prev = page > 1 ? page - 1 : null;
@@ -32,7 +32,7 @@ const userQueries = {
       },
     };
   },
-  user: async (_, { id }, { loaders }) => loaders.user.one(id),
+  property: async (_, { id }, { loaders }) => loaders.property.one(id),
 };
 
-export default userQueries;
+export default propertyQueries;
